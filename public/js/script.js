@@ -14,6 +14,14 @@ linkedApp.config(function($routeProvider) {
             templateUrl : '../product.html',
             controller  : 'productController'
         })
+        .when('/merchant', {
+            templateUrl : '../merchant.html',
+            controller  : 'merchantController'
+        })
+        .when('/wishlist', {
+            templateUrl : '../wishlist.html',
+            controller  : 'wishlistController'
+        })
 
         .when('/profile', {
             templateUrl : '../profile.html',
