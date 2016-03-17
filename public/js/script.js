@@ -15,6 +15,10 @@ linkedApp.config(function($routeProvider) {
             controller  : 'productController'
         })
 
+        .when('/profile', {
+            templateUrl : '../profile.html',
+            controller  : 'profileController'
+        })
 });
 
 // create the controller and inject Angular's $scope
@@ -23,5 +27,9 @@ linkedApp.controller('mainController', function($scope) {
 });
 
 linkedApp.controller('productController', function($scope) {
+
+});
+
+linkedApp.controller('profileController', function($scope) {
 
 });
