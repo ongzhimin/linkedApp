@@ -1,12 +1,12 @@
-var linkedApp = angular.module('linkedApp', ['ngRoute']);
+var linkedApp = angular.module('linkedApp', ['ngRoute', 'firebase']);
 
 linkedApp.config(function($routeProvider) {
     $routeProvider
 
         // route for the home page
         .when('/', {
-            templateUrl : '../list.html',
-            controller  : 'mainController'
+            templateUrl : '../list/list.html',
+            controller  : 'listController'
         })
 
         // route for the product page
@@ -14,10 +14,12 @@ linkedApp.config(function($routeProvider) {
             templateUrl : '../product.html',
             controller  : 'productController'
         })
+
         .when('/merchant', {
             templateUrl : '../merchant.html',
             controller  : 'merchantController'
         })
+
         .when('/wishlist', {
             templateUrl : '../wishlist.html',
             controller  : 'wishlistController'
@@ -30,14 +32,23 @@ linkedApp.config(function($routeProvider) {
 });
 
 // create the controller and inject Angular's $scope
-linkedApp.controller('mainController', function($scope) {
 
-});
+/*linkedApp.controller('mainController', function($scope) {
+    
+});*/
 
 linkedApp.controller('productController', function($scope) {
-
+    
 });
 
 linkedApp.controller('profileController', function($scope) {
+
+});
+
+linkedApp.controller('merchantController', function($scope) {
+
+});
+
+linkedApp.controller('wishlistController', function($scope) {
 
 });
