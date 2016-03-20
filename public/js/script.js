@@ -16,7 +16,7 @@ linkedApp.config(function($routeProvider) {
         })
 
         .when('/merchant', {
-            templateUrl : '../merchant.html',
+            templateUrl : '../merchant/merchant.html',
             controller  : 'merchantController'
         })
 
@@ -45,9 +45,6 @@ linkedApp.controller('profileController', function($scope) {
 
 });
 
-linkedApp.controller('merchantController', function($scope) {
-
-});
 
 linkedApp.controller('wishlistController', function($scope) {
 
