@@ -1,6 +1,7 @@
 /*var evaApp = angular.module('evaApp');*/
 
-linkedApp.controller('merchantController', function ($scope, $firebase) {
+linkedApp.controller('merchantController', function ($scope, $window, $firebase) {
+
 
     var ref = new Firebase("https://te-merchant.firebaseio.com/");
     var sync = $firebase(ref);
@@ -8,12 +9,20 @@ linkedApp.controller('merchantController', function ($scope, $firebase) {
     var locationArray=[];
     var addressArray = [];
     $scope.items = sync.$asArray();
+    
+    $scope.items.$loaded(function(data) {
+        $scope.items = sync.$asArray();
+        var name = $window.sessionStorage.shopName;
+        $scope.getshop(name);
+    });
 
-    $scope.getshop = function (shopname) {
-        var search = shopname.toLowerCase();
-        //var search="Mcdonalds".toLowerCase();
+    $scope.getshop = function (name) {
+        var search = name.toLowerCase();
+        console.log(search);
         for (var i = 0; i < $scope.items.length; i++) {
-            if ($scope.items[i].ShopName.toLowerCase()== search) {
+            console.log($scope.items[i]);
+            if ($scope.items[i].ShopName.toLowerCase() == search) {
+
                 shop = {
                     ShopName: $scope.items[i].ShopName,
                     Image: $scope.items[i].Image,
@@ -24,8 +33,13 @@ linkedApp.controller('merchantController', function ($scope, $firebase) {
                 locationArray = $scope.items[i].Location.split(',');
             }
         }
-        $scope.shopdetails = shop
-        $scope.locations = locationArray
+
+        $scope.shopdetails = shop;
+        $scope.locations = locationArray;
+
+        console.log($scope.shopdetails);
+        console.log($scope.locations);
+        
         for (var j = 0; j < $scope.locations.length; j++) {
             var tempArray = $scope.locations[j].split('+');
             addressArray.push({
@@ -34,9 +48,7 @@ linkedApp.controller('merchantController', function ($scope, $firebase) {
             })
         }
         $scope.addresses = addressArray
-        //console.log($scope.shopdetails)
-        //console.log($scope.locations)
-        //console.log($scope.addresses)
     }
+
 });
 

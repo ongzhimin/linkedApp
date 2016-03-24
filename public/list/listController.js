@@ -1,6 +1,6 @@
 /*var evaApp = angular.module('evaApp');*/
 
-linkedApp.controller('listController', function($scope, $firebase) {
+linkedApp.controller('listController', function($scope, $firebase, $window, $location) {
 
 	var ref = new Firebase("https://te-app.firebaseio.com/");
 	var sync = $firebase(ref);
@@ -37,10 +37,6 @@ linkedApp.controller('listController', function($scope, $firebase) {
 	}
 
 	$scope.goProductDetails = function(item) {
-
-		/*var clickedImg = $(event.target).attr("src");*/
-		/*var name = $(event.target).children().text();*/
-		
 
 		$window.sessionStorage.shopName = item.ShopName;
 		$window.sessionStorage.promoTitle = item.PromotionTitle1;
