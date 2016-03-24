@@ -17,30 +17,39 @@
 
                 <table class="table">
                     <thead>
-                    <tr ng-repeat=>
-                        <th colspan="2">Promotion Item</th>
-                        <th>Description</th>
+                    <tr>
+                        <th colspan="2">Merchant</th>
+                        <th>Promotion Details</th>
+                        <th>T&C</th>
                         <th>End Date</th>
                         <th>Share On</th>
                     </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td colspan="2"><img class="img-resize" src="img/skinfood.jpg"></td>
+                    <!--<tr>
+                        <td colspan="2"><img class="img-resize" src="../img/skinfood.jpg"></td>
                         <td><b>Skin Food</b><br/>Tomato Whitening Mask</td>
                         <td>31 Mar 2016</td>
                         <td><i class="fa fa-facebook-official fa-lg" style="color: #242424"></i>   <i class="fa fa-instagram fa-lg" style="color: #242424"></i>   <i class="fa fa-twitter-square fa-lg" style="color: #242424"></i></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><img class="img-resize" src="img/etude.jpg"></td>
+                        <td colspan="2"><img class="img-resize" src="../img/etude.jpg"></td>
                         <td><b>Etude House</b><br/>Moistful Emulsion</td>
                         <td>3 Apr 2016</td>
                         <td><i class="fa fa-facebook-official fa-lg" style="color: #242424"></i>   <i class="fa fa-instagram fa-lg" style="color: #242424"></i>   <i class="fa fa-twitter-square fa-lg" style="color: #242424"></i></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><img class="img-resize" src="img/etude.jpg"></td>
+                        <td colspan="2"><img class="img-resize" src="../img/etude.jpg"></td>
                         <td><b>Etude House</b><br/>Moistful Emulsion</td>
                         <td>3 Apr 2016</td>
+                        <td><i class="fa fa-facebook-official fa-lg" style="color: #242424"></i>   <i class="fa fa-instagram fa-lg" style="color: #242424"></i>   <i class="fa fa-twitter-square fa-lg" style="color: #242424"></i></td>
+                    </tr>-->
+                    <tr ng-repeat="fav in favourites">
+                        <td><img class="img-resize" src="{{fav.Image}}"></td>
+                        <td>{{fav.ShopName}}</td>
+                        <td>{{fav.PromotionTitle1}}</td>
+                        <td>{{fav.TCText1}}</td>
+                        <td>{{fav.End}}</td>
                         <td><i class="fa fa-facebook-official fa-lg" style="color: #242424"></i>   <i class="fa fa-instagram fa-lg" style="color: #242424"></i>   <i class="fa fa-twitter-square fa-lg" style="color: #242424"></i></td>
                     </tr>
                     </tbody>
