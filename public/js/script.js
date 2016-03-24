@@ -11,7 +11,7 @@ linkedApp.config(function($routeProvider) {
 
         // route for the product page
         .when('/product', {
-            templateUrl : '../product.html',
+            templateUrl : '../product/product.html',
             controller  : 'productController'
         })
 
