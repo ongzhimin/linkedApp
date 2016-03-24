@@ -21,7 +21,7 @@ linkedApp.config(function($routeProvider) {
         })
 
         .when('/wishlist', {
-            templateUrl : '../wishlist.html',
+            templateUrl : '../wishlist/wishlist.html',
             controller  : 'wishlistController'
         })
 
@@ -45,7 +45,3 @@ linkedApp.controller('profileController', function($scope) {
 
 });
 
-
-linkedApp.controller('wishlistController', function($scope) {
-
-});
