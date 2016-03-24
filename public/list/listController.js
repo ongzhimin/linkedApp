@@ -38,6 +38,7 @@ linkedApp.controller('listController', function($scope, $firebase, $window, $loc
 
 	$scope.goProductDetails = function(item) {
 
+		$window.sessionStorage.item = item;
 		$window.sessionStorage.shopName = item.ShopName;
 		$window.sessionStorage.promoTitle = item.PromotionTitle1;
 		$window.sessionStorage.terms = item.TCText1;
