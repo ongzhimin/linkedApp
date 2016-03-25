@@ -13,8 +13,10 @@
 		<link href="css/style.css" rel="stylesheet">
 		<link href="css/style-responsive.css" rel="stylesheet">
 		<link href="css/default.css" rel="stylesheet" id="theme">
-
+        <link rel="stylesheet" type="text/css" href="css/dialog.css">
 		<link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'> 
+        
+        
 
 		<!-- ================== END BASE CSS STYLE ================== -->
 		
@@ -49,6 +51,15 @@
 				<!-- end #header -->
 			
 			<!-- begin #content -->
+                <div>
+                    <div id="dialog-overlay"></div>
+                    <div id="dialog-box" style="top: 150px;">
+                        <div class="dialog-content">
+                            <div id="dialog-message"></div>
+                            <a href="#" class="button">Close</a>
+                        </div>
+                    </div>
+                </div>
 			
 				<div id="content" class="content" ng-view>
 					
@@ -74,6 +85,16 @@
 		<script src="merchant/merchantcontroller.js"></script>
 		<script src="product/productController.js"></script>
 		<script src="wishlist/wishlistcontroller.js"></script>
+        <script src="js/dialog.js"></script>
+        
+        <script>
+            var myFirebaseRef = new Firebase("https://estimote-beacons.firebaseio.com/");
+            myFirebaseRef.child("notification").on("value", function(snapshot) {
+                if(snapshot.val()!=null){
+                      popup(snapshot.val());
+                }
+            });
+        </script>
 
 	</body>
 </html>
