@@ -6,10 +6,44 @@ linkedApp.controller('listController', function($scope, $firebase, $window, $loc
 	var sync = $firebase(ref);
 	var searchArray=[]
 	$scope.items = sync.$asArray();
-	/*$scope.items.$loaded(function(data) {
+
+	$scope.items.$loaded(function(data) {
 		$scope.items = sync.$asArray();
+		$scope.init();
 	});
-	*/
+	
+	$scope.init = function(){
+
+		var searchTerm = angular.element('#search-term').val();
+
+		searchArrayEven = [];
+		searchArrayOdd = [];
+		var search = searchTerm.toLowerCase();
+		var counter = 0;
+
+		for(var i=0;i<$scope.items.length;i++){
+
+			
+			if($scope.items[i].PromotionTitle1.toLowerCase().indexOf(search)!=-1 || $scope.items[i].CopyText1.toLowerCase().indexOf(search)!=-1 || $scope.items[i].Category.toLowerCase().indexOf(search)!=-1|| $scope.items[i].Tags.toLowerCase().indexOf(search)!=-1){
+		
+				if(counter % 2 == 0){
+					console.log("even" + i);
+					searchArrayEven.push({ShopName:$scope.items[i].ShopName,PromotionTitle1:$scope.items[i].PromotionTitle1,TCText1:$scope.items[i].TCText1,End:new Date($scope.items[i].End*1000),Image:$scope.items[i].Image})
+				} else {
+					console.log("odd" + i);
+					searchArrayOdd.push({ShopName:$scope.items[i].ShopName,PromotionTitle1:$scope.items[i].PromotionTitle1,TCText1:$scope.items[i].TCText1,End:new Date($scope.items[i].End*1000),Image:$scope.items[i].Image})
+				}
+
+				counter++;
+			}
+		}
+
+		$scope.searchResultEven=searchArrayEven;
+		$scope.searchResultOdd=searchArrayOdd;
+	}
+
+	
+
 	$scope.search = function(){
 
 		/*var searchTerm = document.getElementById('search-term').text();*/
@@ -19,16 +53,22 @@ linkedApp.controller('listController', function($scope, $firebase, $window, $loc
 		searchArrayEven = [];
 		searchArrayOdd = [];
 		var search = searchTerm.toLowerCase();
+		var counter = 0;
 
 		for(var i=0;i<$scope.items.length;i++){
 
+			
 			if($scope.items[i].PromotionTitle1.toLowerCase().indexOf(search)!=-1 || $scope.items[i].CopyText1.toLowerCase().indexOf(search)!=-1 || $scope.items[i].Category.toLowerCase().indexOf(search)!=-1|| $scope.items[i].Tags.toLowerCase().indexOf(search)!=-1){
-				
-				if(i % 2 == 0){
-				  searchArrayEven.push({ShopName:$scope.items[i].ShopName,PromotionTitle1:$scope.items[i].PromotionTitle1,TCText1:$scope.items[i].TCText1,End:new Date($scope.items[i].End*1000)})
+		
+				if(counter % 2 == 0){
+					console.log("even" + i);
+					searchArrayEven.push({ShopName:$scope.items[i].ShopName,PromotionTitle1:$scope.items[i].PromotionTitle1,TCText1:$scope.items[i].TCText1,End:new Date($scope.items[i].End*1000),Image:$scope.items[i].Image})
 				} else {
-				  searchArrayOdd.push({ShopName:$scope.items[i].ShopName,PromotionTitle1:$scope.items[i].PromotionTitle1,TCText1:$scope.items[i].TCText1,End:new Date($scope.items[i].End*1000)})
+					console.log("odd" + i);
+					searchArrayOdd.push({ShopName:$scope.items[i].ShopName,PromotionTitle1:$scope.items[i].PromotionTitle1,TCText1:$scope.items[i].TCText1,End:new Date($scope.items[i].End*1000),Image:$scope.items[i].Image})
 				}
+
+				counter++;
 			}
 		}
 
@@ -43,6 +83,7 @@ linkedApp.controller('listController', function($scope, $firebase, $window, $loc
 		$window.sessionStorage.promoTitle = item.PromotionTitle1;
 		$window.sessionStorage.terms = item.TCText1;
 		$window.sessionStorage.endDate = item.End;
+		$window.sessionStorage.image = item.Image;
 
 		$location.path("/product");
 	};

@@ -13,7 +13,7 @@
 		<div class="panel panel-danger" ng-repeat="item in searchResultEven">
             
             <div class="panel-body">
-                <img class="img-responsive " src="img/skinfood.jpg">
+                <img class="img-responsive " src="{{item.Image}}">
             </div>
             <div class="panel-footer" ng-click="goProductDetails(item)">
 				<div class="product-header"><b>{{item.ShopName}}</b></div>
@@ -35,7 +35,7 @@
         <div class="panel panel-danger" ng-repeat="item in searchResultOdd">
             
             <div class="panel-body">
-                <img class="img-responsive " src="img/skinfood.jpg">
+                <img class="img-responsive " src="{{item.Image}}">
             </div>
             <div class="panel-footer">
                 <div class="product-header"><b>{{item.ShopName}}</b></div>

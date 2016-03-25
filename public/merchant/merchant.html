@@ -1,24 +1,24 @@
 <!-- <button ng-click="getshop()">Get</button> -->
 <div>
-    <div id="products-list" class="row">
+    <div class="row">
         <div class="col-lg-12" id="column-one">
             <div class="panel panel-danger">
 
                 <div class="panel-body">
                     <img class="img-responsive" src="{{shopdetails.Image}}"/>
                 </div>
-                <div class="panel-footer" style="background-color: #C0ECE8;">
-                    <div class="product-header"><b>{{shopdetails.ShopName}}</b></div>
+                <div class="panel-footer">
+                    <div class="product-header margin-top-7"><b>{{shopdetails.ShopName}}</b></div>
                 </div>
             </div>
         </div>
     </div>
-    <div id="products-list" class="row">
+    <!-- <div id="products-list" class="row">
         <div class="col-lg-12" id="column-one">
             <hr style="border-top: 2px solid #242424">
         </div>
 
-    </div>
+    </div> -->
     <div id="products-list" class="row">
         <div class="col-xs-4" id="column-one" ng-repeat="address in addresses">
             <div class="panel panel-default">
