@@ -35,5 +35,5 @@ function popup(message) {
 	
 	// display the message
 	$('#dialog-message').html("<center><img src='http://jeffeats.com/wp-content/uploads/2015/07/image49.jpg' width='50%'></center></br>"+message);
-			
+    //a test comment
 }
