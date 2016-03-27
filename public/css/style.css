@@ -7700,7 +7700,7 @@ body.flat-black {
 }
 
 .img-resize {
-    height: 25%;
+    height: 20%;
     /*max-width: 100%;
     max-height: 100%;
     margin: auto;*/
@@ -7710,4 +7710,21 @@ body.flat-black {
     display: inline-block;
     float:left;
     margin-top: 20px;
+}
+
+.wishlist-product-header {
+    font-size: 18px;
+    color: black;
+    text-align: center;
+}
+
+.wishlist-product-sub-header {
+    font-size: 16px;
+    color: black;
+    text-align: center;
+}
+
+.btn-remove{
+    border-radius: 4px;
+    background-color: #91D3D1;
 }
