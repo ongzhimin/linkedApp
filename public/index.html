@@ -35,16 +35,27 @@
 			<!-- begin #header -->
 				<nav id="myNavmenu" class="navmenu navmenu-default navmenu-fixed-left offcanvas" role="navigation">
 				    <ul class="nav navmenu-nav">
-					    <li class="active white-border "><a href="#">HOME</a></li>
-					    <li class="white-border"><a href="#">PROFILE</a></li>
-					    <li class="white-border"><a href="#">WISH LIST</a></li>
+					    <li class="active white-border "><a href="#/">HOME</a></li>
+					    <li class="white-border"><a href="#/profile">PROFILE</a></li>
+					    <li class="white-border"><a href="#/wishlist">WISH LIST</a></li>
 				    </ul>
 				</nav>
 				<div id="header" class="header navbar navbar-default navbar-fixed-top">
 				<!-- begin container-fluid -->
 					<div class="container-fluid">
-						<i class="fa fa-bars fa-3x margin-top-7" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body"></i>
-						<i class="fa fa-cog fa-3x pull-right margin-top-7"></i>
+						<!-- <i class="fa fa-bars fa-3x margin-top-7" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body"></i>
+						<i class="fa fa-cog fa-3x pull-right margin-top-7"></i> -->
+						<div class="row">
+							<div class="col-xs-1">
+								<i class="fa fa-bars fa-3x margin-top-7" data-toggle="offcanvas" data-target="#myNavmenu" data-canvas="body"></i>
+							</div>
+							<div class="col-xs-6">
+								<p id="app-header">LINKED</p>
+							</div>
+							<div class="col-xs-5" style="text-align:center">
+								<p class="pull-right" id="message-header">Welcome, Zhi Min</p>
+							</div>
+						</div>
 					</div>
 					<!-- end container-fluid -->
 				</div>

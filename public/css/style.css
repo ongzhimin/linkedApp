@@ -7593,7 +7593,8 @@ body.flat-black {
 }
 
 #search-span {
-    background: #ff5b57;
+   /* background: #ff5b57;*/
+   background: #91D3D1;
 }
 
 .white-border {
@@ -7605,7 +7606,8 @@ body.flat-black {
 }
 
 .panel-footer {
-    background-color: #ff5b57;
+    /*background-color: #ff5b57;*/
+    background-color: #91D3D1;
 }
 
 #products-list .panel-body {
@@ -7728,3 +7730,14 @@ body.flat-black {
     border-radius: 4px;
     background-color: #91D3D1;
 }
+
+#message-header {
+    margin-top: 12px;
+    font-size: 16px;
+    color: white;
+}
+
+#app-header {
+    margin-top: 12px;
+    font-size: 16px;
+    color: white;
