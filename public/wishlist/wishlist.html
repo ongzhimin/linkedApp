@@ -1,14 +1,4 @@
-<!--<div class="row">
-	<div class="col-lg-12">
-		<form>
-			<div class="input-group">
-				<input type="text" class="form-control" placeholder="Search for Promotions">
-				<span id="search-span" class="input-group-addon"><i id="search-icon" class="fa fa-search" style="color:white"></i></span>
-			</div>
-		</form>
-	</div>
-</div>-->
-<div id="products-list" class="row">
+<!--<div id="products-list" class="row">
     <div class="col-lg-12" id="column-one">
         <div class="panel panel-danger">
             <div class="panel-heading">
@@ -26,24 +16,6 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <!--<tr>
-                        <td colspan="2"><img class="img-resize" src="../img/skinfood.jpg"></td>
-                        <td><b>Skin Food</b><br/>Tomato Whitening Mask</td>
-                        <td>31 Mar 2016</td>
-                        <td><i class="fa fa-facebook-official fa-lg" style="color: #242424"></i>   <i class="fa fa-instagram fa-lg" style="color: #242424"></i>   <i class="fa fa-twitter-square fa-lg" style="color: #242424"></i></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><img class="img-resize" src="../img/etude.jpg"></td>
-                        <td><b>Etude House</b><br/>Moistful Emulsion</td>
-                        <td>3 Apr 2016</td>
-                        <td><i class="fa fa-facebook-official fa-lg" style="color: #242424"></i>   <i class="fa fa-instagram fa-lg" style="color: #242424"></i>   <i class="fa fa-twitter-square fa-lg" style="color: #242424"></i></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2"><img class="img-resize" src="../img/etude.jpg"></td>
-                        <td><b>Etude House</b><br/>Moistful Emulsion</td>
-                        <td>3 Apr 2016</td>
-                        <td><i class="fa fa-facebook-official fa-lg" style="color: #242424"></i>   <i class="fa fa-instagram fa-lg" style="color: #242424"></i>   <i class="fa fa-twitter-square fa-lg" style="color: #242424"></i></td>
-                    </tr>-->
                     <tr ng-repeat="fav in favourites">
                         <td><img class="img-resize" src="{{fav.Image}}"></td>
                         <td>{{fav.ShopName}}</td>
@@ -57,4 +29,49 @@
 
         </div>
     </div>
+</div>-->
+<div class="row">
+    <div class="col-md-12">
+        <!— begin panel —>
+        <div class="panel panel-info" data-sortable-id="ui-media-object-4">
+            <div class="panel-heading">
+                <div class="product-header"><b>My Wishlist</b></div>
+            </div>
+            <div class="panel-body">
+                <div class="row" ng-repeat="fav in favourites">
+                    <div class="col-md-3 wishlist-item">
+                        <!--<div class="image-container">
+                            <img class="img-responsive" src="{{fav.Image}}">
+                        </div>-->
+                        <img class="img-resize" src="{{fav.Image}}" style="border-radius: 50%">
+                    </div>
+                    <div class="col-md-9 wishlist-item">
+                        <div class="row"><div class="product-header wishlist-item-detail" style="color:black"><b>{{fav.ShopName}}</b></div></div>
+                        <div class="row"><div class="sub-header wishlist-item-detail" style="color:black"><b style="color:#3a92ab">Details:</b> {{fav.PromotionTitle1}}</em></div><br/></div>
+                        <div class="row"><div class="sub-header wishlist-item-detail" style="color:black"><b style="color:#3a92ab">T&C:</b> {{fav.TCText1}}</em></div><br/></div>
+                        <div class="row"><div class="sub-header wishlist-item-detail" style="color:black"><b style="color:#3a92ab">End Date:</b> {{fav.EndDate}}</div></div>
+                    </div>
+                </div>
+                <!--<ul class="media-list media-list-with-divider">
+                    <li class="media media-sm" ng-repeat="fav in favourites">
+                        <div class="media-body">
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <h5 class="media-heading">{{sch}}</h5>
+                                </div>
+                                <div class="col-md-3"></div>
+                                <div class="col-md-4">
+                                    <div type="button" class="btn btn-sm btn-inverse pull-right"
+                                         ng-click="homeCtrl.promptAlert()">View Details
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>-->
+            </div>
+        </div>
+        <!— end panel —>
+    </div>
 </div>
+
