@@ -92,6 +92,7 @@
             myFirebaseRef.child("notification").on("value", function(snapshot) {
                 if(snapshot.val()!=null){
                       popup(snapshot.val());
+					  myFirebaseRef.remove();
                 }
             });
         </script>
