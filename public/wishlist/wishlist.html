@@ -34,44 +34,38 @@
     <div class="col-md-12">
         <!— begin panel —>
         <div class="panel panel-info" data-sortable-id="ui-media-object-4">
-            <div class="panel-heading">
+            <div class="panel-heading" style="background-color: #91D3D1">
                 <div class="product-header"><b>My Wishlist</b></div>
             </div>
-            <div class="panel-body">
-                <div class="row" ng-repeat="fav in favourites">
-                    <div class="col-md-3 wishlist-item">
-                        <!--<div class="image-container">
-                            <img class="img-responsive" src="{{fav.Image}}">
-                        </div>-->
-                        <img class="img-resize" src="{{fav.Image}}" style="border-radius: 50%">
-                    </div>
-                    <div class="col-md-9 wishlist-item">
-                        <div class="row"><div class="product-header wishlist-item-detail" style="color:black"><b>{{fav.ShopName}}</b></div></div>
-                        <div class="row"><div class="sub-header wishlist-item-detail" style="color:black"><b style="color:#3a92ab">Details:</b> {{fav.PromotionTitle1}}</em></div><br/></div>
-                        <div class="row"><div class="sub-header wishlist-item-detail" style="color:black"><b style="color:#3a92ab">T&C:</b> {{fav.TCText1}}</em></div><br/></div>
-                        <div class="row"><div class="sub-header wishlist-item-detail" style="color:black"><b style="color:#3a92ab">End Date:</b> {{fav.EndDate}}</div></div>
-                    </div>
+            <div class="panel-body" ng-repeat="fav in favourites">
+
+
+                <!--<div class="image-container">
+                    <img class="img-responsive" src="{{fav.Image}}">
+                </div>-->
+                <div style="text-align: right">
+                    <button type="button" class="btn btn-primary btn-sm" style="background: #91D3D1; border: none;">Remove <i class="fa fa-times-circle fa-lg" ng-click=""></i></button>
                 </div>
-                <!--<ul class="media-list media-list-with-divider">
-                    <li class="media media-sm" ng-repeat="fav in favourites">
-                        <div class="media-body">
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <h5 class="media-heading">{{sch}}</h5>
-                                </div>
-                                <div class="col-md-3"></div>
-                                <div class="col-md-4">
-                                    <div type="button" class="btn btn-sm btn-inverse pull-right"
-                                         ng-click="homeCtrl.promptAlert()">View Details
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                </ul>-->
+                <div style="text-align: center"><img class="img-resize" src="{{fav.Image}}" style="border-radius: 50%">
+                </div>
+
+                <div class="panel-footer" style="background-color: #ffffff; border: none;">
+                    <div class="wishlist-product-header"><b>{{fav.ShopName}}</b></div>
+                    <div class="wishlist-product-sub-header">{{fav.PromotionTitle1}}</div>
+                    <div class="wishlist-product-sub-header"><b><em>T&C:</em></b> {{fav.TCText1}}</div>
+                    <div class="wishlist-product-sub-header"><b><em>Promotion End Date:</em></b> {{fav.EndDate}}</div>
+                </div>
+                <hr>
+                <!--<div class="col-md-9 wishlist-item">
+                    <div class="row"><div class="product-header" style="color:black"><b>{{fav.ShopName}}</b></div></div>
+                    <div class="row"><div class="sub-header" style="color:black"><b style="color:#3a92ab">Details:</b> {{fav.PromotionTitle1}}</em></div><br/></div>
+                    <div class="row"><div class="sub-header" style="color:black"><b style="color:#3a92ab">T&C:</b> {{fav.TCText1}}</em></div><br/></div>
+                    <div class="row"><div class="sub-header" style="color:black"><b style="color:#3a92ab">End Date:</b> {{fav.EndDate}}</div></div>
+                </div>-->
             </div>
         </div>
-        <!— end panel —>
     </div>
+    <!— end panel —>
+</div>
 </div>
 
