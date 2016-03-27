@@ -25,7 +25,7 @@ linkedApp.controller('listController', function($scope, $firebase, $window, $loc
 
 			
 			if($scope.items[i].PromotionTitle1.toLowerCase().indexOf(search)!=-1 || $scope.items[i].CopyText1.toLowerCase().indexOf(search)!=-1 || $scope.items[i].Category.toLowerCase().indexOf(search)!=-1|| $scope.items[i].Tags.toLowerCase().indexOf(search)!=-1){
-		
+				console.log($scope.items[i]);
 				if(counter % 2 == 0){
 					console.log("even" + i);
 					searchArrayEven.push({ShopName:$scope.items[i].ShopName,PromotionTitle1:$scope.items[i].PromotionTitle1,TCText1:$scope.items[i].TCText1,End:new Date($scope.items[i].End*1000),Image:$scope.items[i].Image})
@@ -59,7 +59,8 @@ linkedApp.controller('listController', function($scope, $firebase, $window, $loc
 
 			
 			if($scope.items[i].PromotionTitle1.toLowerCase().indexOf(search)!=-1 || $scope.items[i].CopyText1.toLowerCase().indexOf(search)!=-1 || $scope.items[i].Category.toLowerCase().indexOf(search)!=-1|| $scope.items[i].Tags.toLowerCase().indexOf(search)!=-1){
-		
+				
+				console.log($scope.items[i]);
 				if(counter % 2 == 0){
 					console.log("even" + i);
 					searchArrayEven.push({ShopName:$scope.items[i].ShopName,PromotionTitle1:$scope.items[i].PromotionTitle1,TCText1:$scope.items[i].TCText1,End:new Date($scope.items[i].End*1000),Image:$scope.items[i].Image})
@@ -78,14 +79,26 @@ linkedApp.controller('listController', function($scope, $firebase, $window, $loc
 
 	$scope.goProductDetails = function(item) {
 
-		$window.sessionStorage.item = item;
+		/*$window.sessionStorage.item = item;*/
 		$window.sessionStorage.shopName = item.ShopName;
 		$window.sessionStorage.promoTitle = item.PromotionTitle1;
 		$window.sessionStorage.terms = item.TCText1;
-		$window.sessionStorage.endDate = item.End;
+		$window.sessionStorage.endDate = new Date(item.End).toString().split('G')[0];
 		$window.sessionStorage.image = item.Image;
+
 
 		$location.path("/product");
 	};
+
+	/*$scope.timeConverter(time){
+	  var a = new Date(time * 1000);
+	  var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+	  var year = a.getFullYear();
+	  var month = months[a.getMonth()];
+	  var date = a.getDate();
+
+	  var time = date + ' ' + month + ' ' + year;
+	  return time;
+	}*/
 });
 

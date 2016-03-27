@@ -10,9 +10,9 @@
 </div>
 <div id="products-list" class="row">
 	<div class="col-xs-6" id="column-one">
-		<div class="panel panel-danger" ng-repeat="item in searchResultEven">
+		<div class="panel panel-danger" ng-repeat="item in searchResultEven" >
             
-            <div class="panel-body">
+            <div class="panel-body" ng-click="goProductDetails(item)">
                 <img class="img-responsive " src="{{item.Image}}">
             </div>
             <div class="panel-footer" ng-click="goProductDetails(item)">
@@ -34,10 +34,10 @@
 	<div class="col-xs-6" id="column-one">
         <div class="panel panel-danger" ng-repeat="item in searchResultOdd">
             
-            <div class="panel-body">
+            <div class="panel-body" ng-click="goProductDetails(item)">
                 <img class="img-responsive " src="{{item.Image}}">
             </div>
-            <div class="panel-footer">
+            <div class="panel-footer" ng-click="goProductDetails(item)">
                 <div class="product-header"><b>{{item.ShopName}}</b></div>
                 <div class="sub-header">{{item.PromotionTitle1}}</div>
             </div>

@@ -6,12 +6,13 @@
 	        		<img class="img-responsive" src="{{image}}">
 	        	</div>
 	            <div class="info-bar title-header">
-	            	<i class="fa fa-heart-o fa-2x" style="color:#ff5b57;" ng-click="addFavourites()"></i>
+	            	<i id="fav-heart" class="fa fa-heart fa-2x" style="color:black" ng-click="addFavourites()"></i>
 				</div>
 	        </div>
 	        <div class="panel-footer">
 				<div class="product-header" ng-click="goMerchant(shopName)"><b>{{shopName}}</b></div>
 				<div class="sub-header">{{promoTitle}}</div>
+				<div class="sub-header">End Date: {{endDate}}</div>
 	        </div>
 	        <div class="panel-footer" style="background-color:black">
 				<div class="product-header"><b>Terms and Conditions</b></div>
