@@ -27,5 +27,5 @@ linkedApp.controller('productController', function($scope, $window, $location, $
 			Image: $scope.item.Image
 		});
 	};
-
+	
 });
