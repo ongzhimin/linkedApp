@@ -7705,3 +7705,9 @@ body.flat-black {
     max-height: 100%;
     margin: auto;*/
 }
+
+.wishlist-item{
+    display: inline-block;
+    float:left;
+    margin-top: 20px;
+}
