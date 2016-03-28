@@ -9,6 +9,8 @@
                 </div>
                 <div class="panel-footer" style="background-color: #91D3D1">
                     <div class="product-header margin-top-7"><b>{{shopdetails.ShopName}}</b></div>
+                    <div class="sub-header"><b><a href="{{shopdetails.Website}}">{{shopdetails.Website}}</a></b></div>
+                    <div class="sub-header">Contact: {{shopdetails.ContactNumber}}</div>
                 </div>
             </div>
         </div>
@@ -23,8 +25,7 @@
         <div class="col-xs-4" id="column-one" ng-repeat="address in addresses">
             <div class="panel panel-default">
                 <div class="panel-heading">{{address.Mall}}</div>
-                <div class="panel-body">{{address.Address}}
-                </div>
+                <div class="panel-body">{{address.Address}}</div>
             </div>
         </div>
     </div>
