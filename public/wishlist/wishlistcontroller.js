@@ -8,8 +8,8 @@ linkedApp.controller('wishlistController', function ($scope, $firebase) {
     var endTime
 
     $scope.items.$loaded(function(data) {
+		$scope.items = sync.$asArray();
         for(var i=0;i<$scope.items.length;i++){
-            favouritesArray.push({ShopName:$scope.items[i].ShopName,PromotionTitle1:$scope.items[i].PromotionTitle1,TCText1:$scope.items[i].TCText1,EndDate:new Date($scope.items[i].End).toString().split('G')[0],Image:$scope.items[i].Image})
 
         }
         $scope.favourites=favouritesArray
