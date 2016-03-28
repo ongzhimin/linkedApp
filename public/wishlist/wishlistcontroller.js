@@ -9,9 +9,6 @@ linkedApp.controller('wishlistController', function ($scope, $firebase) {
 
     $scope.items.$loaded(function(data) {
 		$scope.items = sync.$asArray();
-        for(var i=0;i<$scope.items.length;i++){
-
-        }
         $scope.favourites=favouritesArray
     });
 

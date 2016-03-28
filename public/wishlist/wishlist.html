@@ -37,28 +37,23 @@
             <div class="panel-heading" style="background-color: #91D3D1">
                 <div class="product-header"><b>My Wishlist</b></div>
             </div>
-            <div class="panel-body" ng-repeat="fav in favourites">
+            <div class="panel-body" ng-repeat="item in items">
 
 
                 <!--<div class="image-container">
                     <img class="img-responsive" src="{{fav.Image}}">
                 </div>-->
                 <div style="text-align: right">
-<<<<<<< HEAD
-                    <button type="button" class="btn btn-primary btn-sm" style="background: #91D3D1; border: none;">Remove <i class="fa fa-times-circle fa-lg" ng-click=""></i></button>
-                    <button type="button" class="btn btn-primary btn-sm" style="background: #91D3D1; border: none;">Remove <i class="fa fa-times-circle fa-lg" ng-click="favourites.$remove(fav)"></i></button>
-=======
-                    <button type="button" class="btn btn-primary btn-sm" style="background: #91D3D1; border: none;" ng-click="favourites.$remove(fav)">Remove <i class="fa fa-times-circle fa-lg" ng-click=""></i></button>
->>>>>>> 02507894509df4137978e5d4027bf26c5d5afdec
+                    <button type="button" class="btn btn-primary btn-sm" style="background: #91D3D1; border: none;">Remove <i class="fa fa-times-circle fa-lg" ng-click="items.$remove(item)"></i></button>
                 </div>
-                <div style="text-align: center"><img class="img-resize" src="{{fav.Image}}" style="border-radius: 50%">
+                <div style="text-align: center"><img class="img-resize" src="{{item.Image}}" style="border-radius: 50%">
                 </div>
 
                 <div class="panel-footer" style="background-color: #ffffff; border: none;">
-                    <div class="wishlist-product-header"><b>{{fav.ShopName}}</b></div>
-                    <div class="wishlist-product-sub-header">{{fav.PromotionTitle1}}</div>
-                    <div class="wishlist-product-sub-header"><b><em>T&C:</em></b> {{fav.TCText1}}</div>
-                    <div class="wishlist-product-sub-header"><b><em>Promotion End Date:</em></b> {{fav.EndDate}}</div>
+                    <div class="wishlist-product-header"><b>{{item.ShopName}}</b></div>
+                    <div class="wishlist-product-sub-header">{{item.PromotionTitle1}}</div>
+                    <div class="wishlist-product-sub-header"><b><em>T&C:</em></b> {{item.TCText1}}</div>
+                    <div class="wishlist-product-sub-header"><b><em>Promotion End Date:</em></b> {{item.End| date:'yyyy-MM-dd HH:mm:ss Z'}}</div>
                 </div>
                 <hr>
                 <!--<div class="col-md-9 wishlist-item">
